@@ -1,0 +1,43 @@
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Sirius</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="/">Início</a> 
+        <a class="nav-link" href="/blockchain">O que é blockchain?</a>
+        <a class="nav-link" href="/contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+  </br>
+
+    <h1>DETAILS OF ALL CAR<a href="/api/queryallcars"> View All Cars</a><a href="/api/createcar"> Insert  a new car</a></h1>
+    <ul></ul>
+    <script>
+    each item in list
+    li="CARID:  " +item["Key"]+" MAKE:  "  +item["Record"]["make"]+" MODEL:  "  + item["Record"]["model"] + " ColOuR:  "  + item["Record"]["colour"] + " OWNER:  "  +item["Record"]["owner"];
+    </script>
+     <footer class="mt-auto text-white-50">
+      <p>© 2022 Sirius - Todos Os Direitos Reservados</p>
+    </footer>
+</div>
+
+
+
+
+
+
+{{!-- doctype html
+html
+ head
+  title FABCAR
+ body
+  h1 DETAILS OF ALL CAR
+ 
+   a(href='/api/queryallcars')  View All Cars
+   
+   a(href='/api/createcar')  Insert  a new car
+  ul
+   each item in list
+    li="CARID:  " +item["Key"]+" MAKE:  "  +item["Record"]["make"]+" MODEL:  "  + item["Record"]["model"] + " ColOuR:  "  + item["Record"]["colour"] + " OWNER:  "  +item["Record"]["owner"] --}}

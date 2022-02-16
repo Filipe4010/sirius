@@ -1,10 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const {engine}  = require('express-handlebars');
+const app = express();
 
-
-var app = express();
+//TEMPLATE ENGINE
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set("views", "./views");
+//BODY PARSER
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 app.use(bodyParser.json());
+
 // Setting for Hyperledger Fabric
 const { Gateway,Wallets } = require('fabric-network');
 const path = require('path');
@@ -12,17 +18,13 @@ const fs = require('fs');
 //const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
   //      const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
 
-app.set('view engine', 'pug');
+//app.set('view engine', 'pug');
 app.get('/api/', function (req, res) {
-
     res.render('index');
-
 });
 
 app.get('/api/createcar', function (req, res) {
-
     res.render('createcar');
-
 });
 
 app.get('/api/queryallcars', async function (req, res)  {
