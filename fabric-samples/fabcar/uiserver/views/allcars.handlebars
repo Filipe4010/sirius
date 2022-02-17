@@ -13,11 +13,28 @@
   </br>
 
     <h1>DETAILS OF ALL CAR<a href="/api/queryallcars"> View All Cars</a><a href="/api/createcar"> Insert  a new car</a></h1>
-    <ul></ul>
-    <script>
-    each item in list
-    li="CARID:  " +item["Key"]+" MAKE:  "  +item["Record"]["make"]+" MODEL:  "  + item["Record"]["model"] + " ColOuR:  "  + item["Record"]["colour"] + " OWNER:  "  +item["Record"]["owner"];
-    </script>
+    <table>
+        <thead>
+            <th>Cor</th>
+            <th>Tipo</th>
+            <th>Distribuidora</th>
+            <th>Modelo</th>   
+            <th>Proprietario</th>
+        </thead>
+        <tbody>
+            {{#each list}}
+                <tr>
+                    <td><p>{{this.Record.color}}</p></td>
+                    <td><p>{{this.Record.docType}}</p></td>
+                    <td><p>{{this.Record.make}}</p></td>
+                    <td><p>{{this.Record.model}}</p></td>
+                    <td><p>{{this.Record.owner}}</p></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</script>
      <footer class="mt-auto text-white-50">
       <p>© 2022 Sirius - Todos Os Direitos Reservados</p>
     </footer>

@@ -59,7 +59,8 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
         const result = await contract.evaluateTransaction('queryAllCars');
 	console.log(JSON.parse(result));
         console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
-        res.render("allcars",{ list:JSON.parse(result)});
+        const list = JSON.parse(result)
+        res.render("allcars",{ list:list });
 } catch (error) {
         console.error(`Failed to evaluate transaction: ${error}`);
         res.status(500).json({error: error});
