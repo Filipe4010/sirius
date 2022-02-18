@@ -11,7 +11,14 @@
     </div>
   </header>
   </br>
-    <h1>First Page</h1><a href="/api/queryallcars"> View All Cars</a><a href="/api/createcar"> Insert  a new car</a><br><br><br>
+    <main class="px-3">
+        <h1>Actions</h1>
+        <a id="bottomViewAll" class="btn btn-lg btn-secondary fw-bold border-green" style="width: 200px; align-self: center;margin-top: 10px;" href="/api/queryallcars" value="">View All</a>
+        <br>
+        <br>
+        <a id="bottomInsert" class="btn btn-lg btn-secondary fw-bold border-green" style="width: 200px; align-self: center;margin-top: 10px; margin-bottom: 10px;" href="/api/createcar" value="">Insert</a>
+    </main>
+    <br><br><br>
     <form method="POST" action="/api/addcar">
         <fieldset class="fieldset">
             <legend class="legend"><b>Formulário de registro de escritura</b></legend>
@@ -38,6 +45,10 @@
                     <label for="registroOficialTitular" style="float: left;">Owner:</label>
                     <input id="registroOficialTitular" name="owner" type="text" class="form-control" placeholder="Oficial titular" required>
                 </div>                
+                   <div class="col">
+                    <label for="registroOficialTitular" style="float: left;">Owner:</label>
+                    <input id="TESTE" name="teste" type="text" class="form-control" placeholder="Oficial titular" required>
+                </div>  
             </div>
         
             {{!-- <fieldset class="fieldset">
