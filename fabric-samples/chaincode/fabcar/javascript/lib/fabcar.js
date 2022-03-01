@@ -83,28 +83,63 @@ class FabCar extends Contract {
         console.info('============= END : Initialize Ledger ===========');
     }
 
-    async queryCar(ctx, carNumber) {
-        const carAsBytes = await ctx.stub.getState(carNumber); // get the car from chaincode state
+    async queryCar(ctx, CampoUnicoIdentificacao) {
+        const carAsBytes = await ctx.stub.getState(CampoUnicoIdentificacao); // get the car from chaincode state
         if (!carAsBytes || carAsBytes.length === 0) {
-            throw new Error(`${carNumber} does not exist`);
+            throw new Error(`${CampoUnicoIdentificacao} does not exist`);
         }
         console.log(carAsBytes.toString());
         return carAsBytes.toString();
     }
 
-    async createCar(ctx, carNumber, make, model, color, owner) {
-        console.info('============= START : Create Car ===========');
+    async createCar(ctx, CampoUnicoIdentificacao,registroAno, registroOficialTitular, registroNumeroMatricula, registroFicha, registroData, descricaoImovel, numeroImovel, inscricaoImovel, tipoImovel, enderecoImovel, composicaoImovel, marcoCoordenadas, norteCoordenadas, lesteCoordenadas, planaCoordenadas, azimutePlanoCoordenadas, nomeProprietario, sedeProprietario, cnpjMfProprietario, dataEscrituraPublica, livroEscrituraPublica, numeroRegistro, dataRegistro, matriculaRgRegistro, numeroMatricula, dataMatricula, dataTermoRequerimento, numeroAverbacaoRequerimento, dataAverbacaoRequerimento, protocoloAv1, favorecidoAv1, matriculaAv1, enderecoAv1, protocoloAv2, subOficialAv2, comarcaAv2, estadoAv2, numeroDajeAv2, dataAv2, responsavelAv2) {
+        console.info('============= START : Create Escritura ===========');
 
-        const car = {
-            color,
-            docType: 'car',
-            make,
-            model,
-            owner,
+        const escritura = {
+            registroAno, 
+            registroOficialTitular, 
+            registroNumeroMatricula, 
+            registroFicha, 
+            registroData, 
+            descricaoImovel, 
+            numeroImovel, 
+            inscricaoImovel, 
+            tipoImovel, 
+            enderecoImovel, 
+            composicaoImovel, 
+            marcoCoordenadas, 
+            norteCoordenadas, 
+            lesteCoordenadas, 
+            planaCoordenadas, 
+            azimutePlanoCoordenadas, 
+            nomeProprietario, 
+            sedeProprietario, 
+            cnpjMfProprietario, 
+            dataEscrituraPublica, 
+            livroEscrituraPublica, 
+            numeroRegistro, 
+            dataRegistro, 
+            matriculaRgRegistro, 
+            numeroMatricula, 
+            dataMatricula, 
+            dataTermoRequerimento, 
+            numeroAverbacaoRequerimento, 
+            dataAverbacaoRequerimento, 
+            protocoloAv1, 
+            favorecidoAv1, 
+            matriculaAv1, 
+            enderecoAv1, 
+            protocoloAv2, 
+            subOficialAv2, 
+            comarcaAv2, 
+            estadoAv2, 
+            numeroDajeAv2, 
+            dataAv2, 
+            responsavelAv2
         };
 
-        await ctx.stub.putState(carNumber, Buffer.from(JSON.stringify(car)));
-        console.info('============= END : Create Car ===========');
+        await ctx.stub.putState(CampoUnicoIdentificacao, Buffer.from(JSON.stringify(escritura)));
+        console.info('============= END : Create Escritura ===========');
     }
 
     async queryAllCars(ctx) {
