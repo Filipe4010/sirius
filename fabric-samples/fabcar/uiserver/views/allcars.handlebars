@@ -22,20 +22,22 @@
 
     <table>
         <thead>
-            <th>Cor</th>
-            <th>Tipo</th>
-            <th>Distribuidora</th>
-            <th>Modelo</th>   
-            <th>Proprietario</th>
+            <th>Ano</th>
+            <th>Oficial-Titular</th>
+            <th>Matricula</th>
+            <th>Ficha</th>   
+            <th>Número do Imóvel</th>
+            <th>Hash</th>
         </thead>
         <tbody>
             {{#each list}}
                 <tr>
-                    <td><p>{{this.Record.color}}</p></td>
-                    <td><p>{{this.Record.docType}}</p></td>
-                    <td><p>{{this.Record.make}}</p></td>
-                    <td><p>{{this.Record.model}}</p></td>
-                    <td><p>{{this.Record.owner}}</p></td>
+                    <td><p>{{this.Record.registroAno}}</p></td>
+                    <td><p>{{this.Record.registroOficialTitular}}</p></td>
+                    <td><p>{{this.Record.registroNumeroMatricula}}</p></td>
+                    <td><p>{{this.Record.registroFicha}}</p></td>
+                    <td><p>{{this.Record.numeroImovel}}</p></td>
+                    <td><p>{{this.Record.CampoUnicoIdentificacao}}</p></td>
                 </tr>
             {{/each}}
         </tbody>
@@ -47,21 +49,3 @@
     </footer>
 </div>
 
-
-
-
-
-
-{{!-- doctype html
-html
- head
-  title FABCAR
- body
-  h1 DETAILS OF ALL CAR
- 
-   a(href='/api/queryallcars')  View All Cars
-   
-   a(href='/api/createcar')  Insert  a new car
-  ul
-   each item in list
-    li="CARID:  " +item["Key"]+" MAKE:  "  +item["Record"]["make"]+" MODEL:  "  + item["Record"]["model"] + " ColOuR:  "  + item["Record"]["colour"] + " OWNER:  "  +item["Record"]["owner"] --}}

@@ -22,36 +22,7 @@
     <form method="POST" action="/api/addcar">
         <fieldset class="fieldset">
             <legend class="legend"><b>Formulário de registro de escritura</b></legend>
-            <div class="row">
-                <div class="col">
-                    <label for="registroAno" style="float: left;">CARID:</label>
-                    <input id="registroAno" name="carid" type="text" class="form-control" placeholder="Ano" required>
-                </div>
-                <div class="col">
-                    <label for="registroOficialTitular" style="float: left;">MAKE:</label>
-                    <input id="registroOficialTitular" name="make" type="text" class="form-control" placeholder="Oficial titular" required>
-                </div>                
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="registroAno" style="float: left;">MODEL:</label>
-                    <input id="registroAno" name="model" type="text" class="form-control" placeholder="Ano" required>
-                </div>
-                <div class="col">
-                    <label for="registroOficialTitular" style="float: left;">Colour:</label>
-                    <input id="registroOficialTitular" name="colour" type="text" class="form-control" placeholder="Oficial titular" required>
-                </div>  
-                <div class="col">
-                    <label for="registroOficialTitular" style="float: left;">Owner:</label>
-                    <input id="registroOficialTitular" name="owner" type="text" class="form-control" placeholder="Oficial titular" required>
-                </div>                
-                   <div class="col">
-                    <label for="registroOficialTitular" style="float: left;">Owner:</label>
-                    <input id="TESTE" name="teste" type="text" class="form-control" placeholder="Oficial titular" required>
-                </div>  
-            </div>
-        
-            {{!-- <fieldset class="fieldset">
+            <fieldset class="fieldset">
                 <legend class="legend"><b>Registro</b> </legend>
                 <div class="row">
                     <div class="col">
@@ -61,7 +32,11 @@
                     <div class="col">
                         <label for="registroOficialTitular" style="float: left;">Oficial titular:</label>
                         <input id="registroOficialTitular" name="registroOficialTitular" type="text" class="form-control" placeholder="Oficial titular" required>
-                    </div>                
+                    </div>  
+                    <div class="col">
+                        <label for="campoUnicoIdentificacao" style="float: left;">Campo Único de Identificação:</label>
+                        <input id="campoUnicoIdentificacao" name="campoUnicoIdentificacao" type="text" class="form-control" placeholder="Campo Único" required>
+                    </div>              
                 </div>
                 </br>
                 <div class="row">
@@ -82,7 +57,6 @@
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="legend"><b>Imóvel</b></legend>
-
                 <div class="row">            
                     <div class="form-group">
                         <label for="descricaoImovel" style="float: left;">Descrição:</label>
@@ -282,7 +256,7 @@
                         </div>                                     
                     </div>                   
                 </fieldset>
-            </fieldset> --}}
+            </fieldset>
         </fieldset>
         <input id="bottomEnviar" class="btn btn-lg btn-secondary fw-bold border-green" style="width: 100px; align-self: center;" type="Submit" value="Submit">
     </form>
