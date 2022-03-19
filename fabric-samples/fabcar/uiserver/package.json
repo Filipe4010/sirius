@@ -21,6 +21,7 @@
         "express-handlebars": "^6.0.2",
         "fabric-ca-client": "^2.2.11",
         "fabric-network": "^2.2.11",
+        "handlebars": "^4.7.7",
         "jade": "^1.0.4",
         "nodemon": "^2.0.15",
         "pug": "^2.0.4"

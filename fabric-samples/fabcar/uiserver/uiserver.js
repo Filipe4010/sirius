@@ -1,10 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const {engine}  = require('express-handlebars');
+const app = express();
 
-
-var app = express();
+//TEMPLATE ENGINE
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set("views", "./views");
+//BODY PARSER
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 app.use(bodyParser.json());
+
 // Setting for Hyperledger Fabric
 const { Gateway,Wallets } = require('fabric-network');
 const path = require('path');
@@ -12,17 +18,17 @@ const fs = require('fs');
 //const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
   //      const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
 
+<<<<<<< HEAD
 app.set('view engine', 'handlebars');
+=======
+//app.set('view engine', 'pug');
+>>>>>>> 62c189b44cc53512fc2a17ebde2ec213a614d865
 app.get('/api/', function (req, res) {
-
     res.render('index');
-
 });
 
 app.get('/api/createcar', function (req, res) {
-
     res.render('createcar');
-
 });
 
 app.get('/api/queryallcars', async function (req, res)  {
@@ -57,7 +63,8 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
         const result = await contract.evaluateTransaction('queryAllCars');
 	console.log(JSON.parse(result));
         console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
-        res.render("allcars",{ list:JSON.parse(result)});
+        const list = JSON.parse(result)
+        res.render("allcars",{ list:list });
 } catch (error) {
         console.error(`Failed to evaluate transaction: ${error}`);
         res.status(500).json({error: error});
