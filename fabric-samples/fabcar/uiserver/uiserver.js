@@ -146,7 +146,7 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
 
-        await contract.submitTransaction('createCar', req.body.carid, req.body.make, req.body.model, req.body.colour, req.body.owner);
+        await contract.submitTransaction('createCar', req.body.campoUnicoIdentificacao,req.body.registroAno, req.body.registroOficialTitular, req.body.registroNumeroMatricula, req.body.registroFicha, req.body.registroData, req.body.descricaoImovel, req.body.numeroImovel, req.body.inscricaoImovel, req.body.tipoImovel, req.body.enderecoImovel, req.body.composicaoImovel, req.body.marcoCoordenadas, req.body.norteCoordenadas, req.body.lesteCoordenadas, req.body.planaCoordenadas, req.body.azimutePlanoCoordenadas, req.body.nomeProprietario, req.body.sedeProprietario, req.body.cnpjMfProprietario, req.body.dataEscrituraPublica, req.body.livroEscrituraPublica, req.body.numeroRegistro, req.body.dataRegistro, req.body.matriculaRgRegistro, req.body.numeroMatricula, req.body.dataMatricula, req.body.dataTermoRequerimento, req.body.numeroAverbacaoRequerimento, req.body.dataAverbacaoRequerimento, req.body.protocoloAv1, req.body.favorecidoAv1, req.body.matriculaAv1, req.body.enderecoAv1, req.body.protocoloAv2, req.body.subOficialAv2, req.body.comarcaAv2, req.body.estadoAv2, req.body.numeroDajeAv2, req.body.dataAv2, req.body.responsavelAv2);
 
         console.log('Transaction has been submitted');
         res.send('Transaction has been submitted CAR ADDED');
@@ -188,7 +188,7 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
 // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('changeCarOwner', req.params.car_index, req.body.owner);
+        await contract.submitTransaction('changeCarOwner', req.params.car_index, req.body.registroFicha);
         console.log('Transaction has been submitted');
         res.send('Transaction has been submitted');
 // Disconnect from the gateway.
