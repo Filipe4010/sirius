@@ -100,7 +100,6 @@ class FabCar extends Contract {
             registroOficialTitular, 
             registroNumeroMatricula, 
             registroFicha, 
-
             registroData, 
             descricaoImovel, 
             numeroImovel, 
