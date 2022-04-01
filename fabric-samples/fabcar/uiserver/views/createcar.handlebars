@@ -25,32 +25,32 @@
             <fieldset class="fieldset">
                 <legend class="legend"><b>Registro</b> </legend>
                 <div class="row">
+                     <div class="col">
+                        <label for="campoUnicoIdentificacao" style="float: left;">Campo Único de Identificação:</label>
+                        <input id="campoUnicoIdentificacao" name="campoUnicoIdentificacao" type="text" class="form-control" placeholder="Campo Único" required>
+                    </div>  
                     <div class="col">
                         <label for="registroAno" style="float: left;">Ano:</label>
-                        <input id="registroAno" name="registroAno" type="text" class="form-control" placeholder="Ano" required>
+                        <input id="registroAno" name="registro[ano]" type="text" class="form-control" placeholder="Ano" required>
                     </div>
                     <div class="col">
                         <label for="registroOficialTitular" style="float: left;">Oficial titular:</label>
-                        <input id="registroOficialTitular" name="registroOficialTitular" type="text" class="form-control" placeholder="Oficial titular" required>
+                        <input id="registroOficialTitular" name="registro[oficialTitular]" type="text" class="form-control" placeholder="Oficial titular" required>
                     </div>  
-                    <div class="col">
-                        <label for="campoUnicoIdentificacao" style="float: left;">Campo Único de Identificação:</label>
-                        <input id="campoUnicoIdentificacao" name="campoUnicoIdentificacao" type="text" class="form-control" placeholder="Campo Único" required>
-                    </div>              
                 </div>
                 </br>
                 <div class="row">
                     <div class="col">
                         <label for="registroNumeroMatricula" style="float: left;">Número da matrícula:</label>
-                        <input id="registroNumeroMatricula" name="registroNumeroMatricula" type="text" class="form-control" placeholder="Número da matrícula" required>
+                        <input id="registroNumeroMatricula" name="registro[numeroMatricula]" type="text" class="form-control" placeholder="Número da matrícula" required>
                     </div>
                     <div class="col">
                         <label for="registroFicha" style="float: left;">Ficha:</label>
-                        <input id="registroFicha" name="registroFicha" type="text" class="form-control" placeholder="Ficha" required>
+                        <input id="registroFicha" name="registro[ficha]" type="text" class="form-control" placeholder="Ficha" required>
                     </div>
                     <div class="col">
                         <label for="registroData" style="float: left;">Data:</label>
-                        <input id="registroData" name="registroData" type="text" class="form-control datepicker" placeholder="Data" required>
+                        <input id="registroData" name="registro[data]" type="text" class="form-control datepicker" placeholder="Data" required>
                     </div>
                 </div>
                 </br>
@@ -59,37 +59,37 @@
                 <legend class="legend"><b>Imóvel</b></legend>
                 <div class="row">            
                     <div class="form-group">
-                        <label for="descricaoImovel" style="float: left;">Descrição:</label>
-                        <textarea class="form-control" name="descricaoImovel" id="descricaoImovel" name="descricaoImovel" rows="5"  placeholder="Descrição" required></textarea>
+                        <label for="descricao" style="float: left;">Descrição:</label>
+                        <textarea class="form-control" name="imovel[descricao]" id="descricao" name="descricao" rows="5"  placeholder="Descrição" required></textarea>
                     </div>
                 </div>
                 </br>
                 <div class="row">            
                     <div class="col">                    
-                        <label for="numeroImovel" style="float: left;">Número:</label>
-                        <input type="text" name="numeroImovel" id="numeroImovel" class="form-control" placeholder="Número" required>
+                        <label for="numero" style="float: left;">Número:</label>
+                        <input type="text" name="imovel[numero]" id="numero" class="form-control" placeholder="Número" required>
                     </div>
                     <div class="col">
-                        <label for="inscricaoImovel" style="float: left;">Inscrição:</label>
-                        <input type="text" name="inscricaoImovel" id="inscricaoImovel" class="form-control" placeholder="Inscrição" required>
+                        <label for="inscricao" style="float: left;">Inscrição:</label>
+                        <input type="text" name="imovel[inscricao]" id="inscricao" class="form-control" placeholder="Inscrição" required>
                     </div>
                     <div class="col">
-                        <label for="tipoImovel" style="float: left;">Tipo:</label>
-                        <input type="text" name="tipoImovel" id="tipoImovel" class="form-control" placeholder="Tipo" required>
+                        <label for="tipo" style="float: left;">Tipo:</label>
+                        <input type="text" name="imovel[tipo]" id="tipo" class="form-control" placeholder="Tipo" required>
                     </div>
                 </div>
                 </br>
                 <div class="row">
                     <div class="col">
-                        <label for="enderecoImovel" style="float: left;">Endereço:</label>
-                        <input type="text" name="enderecoImovel" id="enderecoImovel" class="form-control" placeholder="Endereço" required>
+                        <label for="endereco" style="float: left;">Endereço:</label>
+                        <input type="text" name="imovel[endereco]" id="endereco" class="form-control" placeholder="Endereço" required>
                     </div>
                 </div>
                 </br>
                 <div class="row">            
                     <div class="form-group">
-                        <label for="composicaoImovel" style="float: left;">Composição:</label>
-                        <textarea class="form-control" name="composicaoImovel" id="composicaoImovel" rows="5"  placeholder="Composição" required></textarea>
+                        <label for="composicao" style="float: left;">Composição:</label>
+                        <textarea class="form-control" name="imovel[composicao]" id="composicao" rows="5"  placeholder="Composição" required></textarea>
                     </div>
                 </div>
                 </br>
@@ -98,26 +98,26 @@
                     <div class="row">
                         <div class="col">
                             <label for="marcoCoordenadas" style="float: left;">Marco:</label>
-                            <input type="text" name="marcoCoordenadas" id="marcoCoordenadas" class="form-control" placeholder="Marco" required>
+                            <input type="text" name="imovel[coordenadas][marco]" id="marcoCoordenadas" class="form-control" placeholder="Marco" required>
                         </div>
                         <div class="col">
                             <label for="norteCoordenadas" style="float: left;">Norte:</label>
-                            <input type="text" name="norteCoordenadas" id="norteCoordenadas" class="form-control" placeholder="Norte" required>
+                            <input type="text" name="imovel[coordenadas][norte]" id="norteCoordenadas" class="form-control" placeholder="Norte" required>
                         </div>
                         <div class="col">
                             <label for="lesteCoordenadas" style="float: left;">Leste:</label>
-                            <input type="text" name="lesteCoordenadas" id="lesteCoordenadas" class="form-control" placeholder="Leste" required>
+                            <input type="text" name="imovel[coordenadas][leste]" id="lesteCoordenadas" class="form-control" placeholder="Leste" required>
                         </div>
                     </div>
                     </br>
                     <div class="row">            
                         <div class="col">
                             <label for="planaCoordenadas" style="float: left;">Plana:</label>
-                            <input type="text" name="planaCoordenadas" id="planaCoordenadas" class="form-control" placeholder="Plana" required>
+                            <input type="text" name="imovel[coordenadas][plana]" id="planaCoordenadas" class="form-control" placeholder="Plana" required>
                         </div>
                         <div class="col">
                             <label for="azimutePlanoCoordenadas" style="float: left;">Azimute Plano:</label>
-                            <input type="text" name="azimutePlanoCoordenadas" id="azimutePlanoCoordenadas" class="form-control" placeholder="Azimute Plano" required>
+                            <input type="text" name="imovel[coordenadas][azimutePlano]" id="azimutePlanoCoordenadas" class="form-control" placeholder="Azimute Plano" required>
                         </div>
                     </div>
                 </fieldset>
@@ -126,15 +126,15 @@
                     <div class="row">
                         <div class="col">
                             <label for="nomeProprietario" style="float: left;">Proprietário:</label>
-                            <input type="text" name="nomeProprietario" id="nomeProprietario" class="form-control" placeholder="Proprietário" required>
+                            <input type="text" name="imovel[proprietario][nome]" id="nomeProprietario" class="form-control" placeholder="Proprietário" required>
                         </div>
                         <div class="col">
                             <label for="sedeProprietario" style="float: left;">Sede:</label>
-                            <input type="text" name="sedeProprietario" id="sedeProprietario" class="form-control" placeholder="Sede" required>
+                            <input type="text" name="imovel[proprietario][sede]" id="sedeProprietario" class="form-control" placeholder="Sede" required>
                         </div>
                         <div class="col">
                             <label for="cnpjMfProprietario" style="float: left;">CNPJ/MF:</label>
-                            <input type="text" name="cnpjMfProprietario" id="cnpjMfProprietario" class="form-control" placeholder="CNPJ/MF" required>
+                            <input type="text" name="imovel[proprietario][cnpjMf]" id="cnpjMfProprietario" class="form-control" placeholder="CNPJ/MF" required>
                         </div>
                     </div>
                 </fieldset>
@@ -143,11 +143,11 @@
                     <div class="row">
                         <div class="col">
                             <label for="dataEscrituraPublica" style="float: left;">Data:</label>
-                            <input type="text" name="dataEscrituraPublica" id="dataEscrituraPublica" class="form-control datepicker" placeholder="Data" required>
+                            <input type="text" name="imovel[escritura_publica][data]" id="dataEscrituraPublica" class="form-control datepicker" placeholder="Data" required>
                         </div>
                         <div class="col">
                             <label for="livroEscrituraPublica" style="float: left;">Livro:</label>
-                            <input type="text" name="livroEscrituraPublica" id="livroEscrituraPublica" class="form-control" placeholder="Livro" required>
+                            <input type="text" name="imovel[escritura_publica][livro]" id="livroEscrituraPublica" class="form-control" placeholder="Livro" required>
                         </div>
                     </div>
                     </br>
@@ -156,15 +156,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="numeroRegistro" style="float: left;">Número:</label>
-                                <input type="text" name="numeroRegistro" id="numeroRegistro" class="form-control" placeholder="Número" required>
+                                <input type="text" name="imovel[registro][numero]" id="numeroRegistro" class="form-control" placeholder="Número" required>
                             </div>
                             <div class="col">
                                 <label for="dataRegistro" style="float: left;">Data:</label>
-                                <input type="text" name="dataRegistro" id="dataRegistro" class="form-control datepicker" placeholder="Data" required>
+                                <input type="text" name="imovel[registro][data]" id="dataRegistro" class="form-control datepicker" placeholder="Data" required>
                             </div>
                             <div class="col">
                                 <label for="matriculaRgRegistro" style="float: left;">Matrícula do RG:</label>
-                                <input type="text" name="matriculaRgRegistro" id="matriculaRgRegistro" class="form-control" placeholder="Matrícula do RG" required>
+                                <input type="text" name="imovel[registro][matricula_rg]" id="matriculaRgRegistro" class="form-control" placeholder="Matrícula do RG" required>
                             </div>
                         </div>                   
                     </fieldset>
@@ -173,11 +173,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="numeroMatricula" style="float: left;">Número:</label>
-                                <input type="text" name="numeroMatricula" id="numeroMatricula" class="form-control" placeholder="Número" required>
+                                <input type="text" name="imovel[matricula][numero]" id="numeroMatricula" class="form-control" placeholder="Número" required>
                             </div>
                             <div class="col">
                                 <label for="dataMatricula" style="float: left;">Data:</label>
-                                <input type="text" name="dataMatricula" id="dataMatricula" class="form-control datepicker" placeholder="Data" required>
+                                <input type="text" name="imovel[matricula][data]" id="dataMatricula" class="form-control datepicker" placeholder="Data" required>
                             </div>                    
                         </div>                  
                     </fieldset>
@@ -186,86 +186,86 @@
                         <div class="row">
                             <div class="col">
                                 <label for="dataTermoRequerimento" style="float: left;">Data do Termo:</label>
-                                <input type="text" name="dataTermoRequerimento" id="dataTermoRequerimento" class="form-control datepicker" placeholder="Data do Termo" required>
+                                <input type="text" name="imovel[requerimento][dataTermo]" id="dataTermoRequerimento" class="form-control datepicker" placeholder="Data do Termo" required>
                             </div>
                             <div class="col">
                                 <label for="numeroAverbacaoRequerimento" style="float: left;">Número da averbação:</label>
-                                <input type="text" name="numeroAverbacaoRequerimento" id="numeroAverbacaoRequerimento" class="form-control" placeholder="Número da averbação" required>
+                                <input type="text" name="imovel[requerimento][numeroAverbacao]" id="numeroAverbacaoRequerimento" class="form-control" placeholder="Número da averbação" required>
                             </div>
                             <div class="col">
                                 <label for="dataAverbacaoRequerimento" style="float: left;">Data da averbação:</label>
-                                <input type="text" name="dataAverbacaoRequerimento" id="dataAverbacaoRequerimento" class="form-control datepicker" placeholder="Data da averbação" required>
+                                <input type="text" name="imovel[requerimento][dataAverbacao]" id="dataAverbacaoRequerimento" class="form-control datepicker" placeholder="Data da averbação" required>
                             </div>                     
                         </div>                  
                     </fieldset>               
                 </fieldset>
-                <fieldset class="fieldset" id="fieldsetAverbacao">
-                    <legend class="legend"><b>Averbação(ôes)</b></legend>
-                    <fieldset class="fieldset rowFieldsetAverbacao">
-                        <legend class="legend"><b>Averbação 1</b></legend>
-                        <table id="tableAverbacao">
-                            <tbody class="tbodyAverbacao">
-                                <tr>
-                                    <td>
-                                        <label for="protocoloAv1" style="float: left;">Protocolo:</label>
-                                        <input type="text" name="protocoloAv1" id="protocoloAv1" class="form-control" placeholder="Protocolo" required>
-                                    </td>
-                                    <td>
-                                        <label for="subOficialAv2" style="float: left;">Sub-Oficial:</label>
-                                        <input type="text" name="subOficialAv2" id="subOficialAv2" class="form-control" placeholder="Sub-Oficial" required>
-                                    </td>
-                                    <td>
-                                        <label for="comarcaAv2" style="float: left;">Comarca:</label>
-                                        <input type="text" name="comarcaAv2" id="comarcaAv2" class="form-control" placeholder="Comarca" required>
-                                    </td> 
-                                    <td>
-                                        <label for="favorecidoAv1" style="float: left;">Favorecido:</label>
-                                        <input type="text" name="favorecidoAv1" id="favorecidoAv1" class="form-control" placeholder="Favorecido" required>
-                                    </td>
-                                    <td>
-                                        <label for="matriculaAv1" style="float: left;">Matrícula:</label>
-                                        <input type="text" name="matriculaAv1" id="matriculaAv1" class="form-control" placeholder="Matrícula" required>
-                                    </td> 
-                                </tr> 
-                                </br>
-                                <tr>
-                                    <td>
-                                        <label for="numeroDajeAv2" style="float: left;">Número do DAJE:</label>
-                                        <input type="text" name="numeroDajeAv2" id="numeroDajeAv2" class="form-control" placeholder="Número do DAJE" required>
-                                    </td>
-                                    <td>
-                                        <label for="dataAv2" style="float: left;">Data:</label>
-                                        <input type="text" name="dataAv2" id="dataAv2" class="form-control datepicker" placeholder="Data" required>
-                                    </td>
-                                    <td>
-                                        <label for="responsavelAv2" style="float: left;">Responsável:</label>
-                                        <input type="text" name="responsavelAv2" id="responsavelAv2" class="form-control" placeholder="Responsável" required>
-                                    </td>  
-                                    <td>
-                                        <label for="enderecoAv1" style="float: left;">Endereço:</label>
-                                        <input type="text" name="enderecoAv1" id="enderecoAv1" class="form-control" placeholder="Endereço" required>
-                                    </td>  
-                                    <td>
-                                        <label for="estadoAv2" style="float: left;">Estado:</label>
-                                        <input type="text" name="estadoAv2" id="estadoAv2" class="form-control" placeholder="Estado" required>
-                                    </td>                                       
-                                </tr>   
-                                <tr>
-                                    <td colspan="5">                                 
-                                        <a type="button" class="btn btn-lg btn-secondary fw-bold border-red deleteAverbacao" style="text-decoration: none; float:right; margin: 10px;">Excluir</a>     
-                                        <br><br>                   
-                                    </td>
-                                </tr> 
-                            </tbody>
-                        </table>
-                    </fieldset> 
-                </fieldset>
-                <table>
-                    <tr>
-                        <a type="button" class="btn btn-lg btn-secondary fw-bold border-blue" style="text-decoration: none; float:right; margin: 10px;" id="createAverbacao">Adicionar averbação</a>                        
-                    </tr>                                       
-                </table> 
             </fieldset>
+            <fieldset class="fieldset" id="fieldsetAverbacao">
+                <legend class="legend"><b>Averbação(ôes)</b></legend>
+                <fieldset class="fieldset rowFieldsetAverbacao">
+                    <legend class="legend"><b>Averbação 1</b></legend>
+                    <table id="tableAverbacao">
+                        <tbody class="tbodyAverbacao">
+                            <tr>
+                                <td>
+                                    <label for="" style="float: left;">Protocolo:</label>
+                                    <input type="text" name="averbacao[protocolo]" class="form-control" placeholder="Protocolo" required>
+                                </td>
+                                <td>
+                                    <label for="" style="float: left;">Sub-Oficial:</label>
+                                    <input type="text" name="averbacao[subOficial]" class="form-control" placeholder="Sub-Oficial" required>
+                                </td>
+                                <td>
+                                    <label for="" style="float: left;">Comarca:</label>
+                                    <input type="text" name="averbacao[comarca]"  class="form-control" placeholder="Comarca" required>
+                                </td> 
+                                <td>
+                                    <label for="" style="float: left;">Favorecido:</label>
+                                    <input type="text" name="averbacao[favorecido]"  class="form-control" placeholder="Favorecido" required>
+                                </td>
+                                <td>
+                                    <label for="" style="float: left;">Matrícula:</label>
+                                    <input type="text" name="averbacao[matricula]"  class="form-control" placeholder="Matrícula" required>
+                                </td> 
+                            </tr> 
+                            </br>
+                            <tr>
+                                <td>
+                                    <label for="numero_dajeAv2" style="float: left;">Nº DAJE:</label>
+                                    <input type="text" name="averbacao[numero_daje]" class="form-control" placeholder="Número do DAJE" required>
+                                </td>
+                                <td>
+                                    <label for="dataAv2" style="float: left;">Data:</label>
+                                    <input type="text" name="averbacao[data]" class="form-control datepicker" placeholder="Data" required>
+                                </td>
+                                <td>
+                                    <label for="responsavelAv2" style="float: left;">Responsável:</label>
+                                    <input type="text" name="averbacao[responsavel]" class="form-control" placeholder="Responsável" required>
+                                </td>  
+                                <td>
+                                    <label for="enderecoAv1" style="float: left;">Endereço:</label>
+                                    <input type="text" name="averbacao[endereco]" class="form-control" placeholder="Endereço" required>
+                                </td>  
+                                <td>
+                                    <label for="estadoAv2" style="float: left;">Estado:</label>
+                                    <input type="text" name="averbacao[estado]" class="form-control" placeholder="Estado" required>
+                                </td>                                       
+                            </tr>   
+                            <tr>
+                                <td colspan="5">                                 
+                                    <a type="button" class="btn btn-lg btn-secondary fw-bold border-red deleteAverbacao" style="text-decoration: none; float:right; margin: 10px;">Excluir</a>     
+                                    <br><br>                   
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </fieldset> 
+            </fieldset>
+            <table>
+                <tr>
+                    <a type="button" class="btn btn-lg btn-secondary fw-bold border-blue" style="text-decoration: none; float:right; margin: 10px;" id="createAverbacao">Adicionar averbação</a>                        
+                </tr>                                       
+            </table> 
         </fieldset>
         <input id="bottomEnviar" class="btn btn-lg btn-secondary fw-bold border-green" style="width: 100px; align-self: center;" type="Submit" value="Submit">
     </form>
@@ -296,55 +296,55 @@
                 html += '            <tr>\n';
                 html += '               <td>\n';
                 html += '                   <label for="protocoloAv1" style="float: left;">Protocolo:</label>\n';
-                html += '                   <input type="text" name="protocoloAv1" id="protocoloAv1" class="form-control" placeholder="Protocolo" required>\n';
+                html += '                   <input type="text" name="averbacao[protocolo]" id="protocoloAv1" class="form-control" placeholder="Protocolo" required>\n';
                 html += '               </td>\n';
             
                 html += '               <td>\n';
                 html += '                   <label for="subOficialAv2" style="float: left;">Sub-Oficial:</label>\n';
-                html += '                   <input type="text" name="subOficialAv2" id="subOficialAv2" class="form-control" placeholder="Sub-Oficial" required>\n';
+                html += '                   <input type="text" name="averbacao[subOficial]" id="subOficialAv2" class="form-control" placeholder="Sub-Oficial" required>\n';
                 html += '               </td>\n';
             
                 html += '               <td>\n';
                 html += '                   <label for="comarcaAv2" style="float: left;">Comarca:</label>\n';
-                html += '                   <input type="text" name="comarcaAv2" id="comarcaAv2" class="form-control" placeholder="Comarca" required>\n';
+                html += '                   <input type="text" name="averbacao[comarca]" id="comarcaAv2" class="form-control" placeholder="Comarca" required>\n';
                 html += '               </td>\n';   
 
                 html += '               <td>\n';
                 html += '                   <label for="favorecidoAv1" style="float: left;">Favorecido:</label>\n';
-                html += '                   <input type="text" name="favorecidoAv1" id="favorecidoAv1" class="form-control" placeholder="Favorecido" required>\n';
+                html += '                   <input type="text" name="averbacao[favorecido]" id="favorecidoAv1" class="form-control" placeholder="Favorecido" required>\n';
                 html += '               </td>\n'; 
 
                 html += '               <td>\n';
                 html += '                   <label for="matriculaAv1" style="float: left;">Matricula:</label>\n';
-                html += '                   <input type="text" name="matriculaAv1" id="matriculaAv1" class="form-control" placeholder="Matrícula" required>\n';
+                html += '                   <input type="text" name="averbacao[matricula]" id="matriculaAv1" class="form-control" placeholder="Matrícula" required>\n';
                 html += '               </td>\n';        
                 html += '            </tr>\n';               
                 html += '            </br>\n';   
 
                 html += '            <tr>\n';
                 html += '               <td>\n';
-                html += '                   <label for="numeroDajeAv2" style="float: left;">Número Daje:</label>\n';
-                html += '                   <input type="text" name="numeroDajeAv2" id="numeroDajeAv2" class="form-control" placeholder="Múmero do DAJE" required>\n';
+                html += '                   <label for="numero_dajeAv2" style="float: left;">Número Daje:</label>\n';
+                html += '                   <input type="text" name="averbacao[numero_daje]" id="numero_dajeAv2" class="form-control" placeholder="Múmero do DAJE" required>\n';
                 html += '               </td>\n';
 
                 html += '               <td>\n';
                 html += '                   <label for="dataAv2" style="float: left;">Data:</label>\n';
-                html += '                   <input type="text" name="dataAv2" id="dataAv2" class="form-control" placeholder="Data" required>\n';
+                html += '                   <input type="text" name="averbacao[data]" id="dataAv2" class="form-control" placeholder="Data" required>\n';
                 html += '               </td>\n';
 
                 html += '               <td>\n';
                 html += '                   <label for="responsavelAv2" style="float: left;">Responsável:</label>\n';
-                html += '                   <input type="text" name="responsavelAv2" id="responsavelAv2" class="form-control" placeholder="Responsável" required>\n';
+                html += '                   <input type="text" name="averbacao[responsavel]" id="responsavelAv2" class="form-control" placeholder="Responsável" required>\n';
                 html += '               </td>\n';     
                                     
                 html += '               <td>\n';
                 html += '                   <label for="enderecoAv1" style="float: left;">Endereço:</label>\n';
-                html += '                   <input type="text" name="enderecoAv1" id="enderecoAv1" class="form-control" placeholder="Endereço" required>\n';
+                html += '                   <input type="text" name="averbacao[endereco]" id="enderecoAv1" class="form-control" placeholder="Endereço" required>\n';
                 html += '               </td>\n';     
 
                 html += '               <td>\n';
                 html += '                   <label for="estadoAv2" style="float: left;">Estado:</label>\n';
-                html += '                   <input type="text" name="estadoAv2" id="estadoAv2" class="form-control" placeholder="Estado" required>\n';
+                html += '                   <input type="text" name="averbacao[estado]" id="estadoAv2" class="form-control" placeholder="Estado" required>\n';
                 html += '                   <hr size="10" width="50%" align="center" noshade>\n';     
                 html += '               </td>\n';  
                 html += '            </tr>\n';

@@ -141,8 +141,74 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
 // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
+        
+        await contract.submitTransaction('createCar', 
+                req.body.campoUnicoIdentificacao,
+                registro = [
+                        req.body.registro.ano,
+                        req.body.registro.oficialTitular,
+                        req.body.registro.numeroMatricula,
+                        req.body.registro.ficha,
+                        req.body.registro.data,
+                ],
+                imovel = [
+                        req.body.imovel.descricao,
+                        req.body.imovel.numero, 
+                        req.body.imovel.inscricao, 
+                        req.body.imovel.tipo, 
+                        req.body.imovel.endereco, 
+                        req.body.imovel.composicao, 
 
-        await contract.submitTransaction('createCar', req.body.campoUnicoIdentificacao,req.body.registroAno, req.body.registroOficialTitular, req.body.registroNumeroMatricula, req.body.registroFicha, req.body.registroData, req.body.descricaoImovel, req.body.numeroImovel, req.body.inscricaoImovel, req.body.tipoImovel, req.body.enderecoImovel, req.body.composicaoImovel, req.body.marcoCoordenadas, req.body.norteCoordenadas, req.body.lesteCoordenadas, req.body.planaCoordenadas, req.body.azimutePlanoCoordenadas, req.body.nomeProprietario, req.body.sedeProprietario, req.body.cnpjMfProprietario, req.body.dataEscrituraPublica, req.body.livroEscrituraPublica, req.body.numeroRegistro, req.body.dataRegistro, req.body.matriculaRgRegistro, req.body.numeroMatricula, req.body.dataMatricula, req.body.dataTermoRequerimento, req.body.numeroAverbacaoRequerimento, req.body.dataAverbacaoRequerimento, req.body.protocoloAv1, req.body.favorecidoAv1, req.body.matriculaAv1, req.body.enderecoAv1, req.body.protocoloAv2, req.body.subOficialAv2, req.body.comarcaAv2, req.body.estadoAv2, req.body.numeroDajeAv2, req.body.dataAv2, req.body.responsavelAv2);
+                        coordenadas = [
+                                req.body.imovel.coordenadas.marco, 
+                                req.body.imovel.coordenadas.norte, 
+                                req.body.imovel.coordenadas.leste, 
+                                req.body.imovel.coordenadas.plana, 
+                                req.body.imovel.coordenadas.azimutePlano 
+                        ],
+        
+                        proprietario = [
+                                req.body.imovel.proprietario.nome, 
+                                req.body.imovel.proprietario.sede, 
+                                req.body.imovel.proprietario.cnpjMf 
+                        ],
+                        
+                        escritura_publica = [
+                                req.body.imovel.escritura_publica.data, 
+                                req.body.imovel.escritura_publica.livro
+                        ],
+
+                        registro = [
+                                req.body.imovel.registro.numero, 
+                                req.body.imovel.registro.data, 
+                                req.body.imovel.registro.matricula_rg
+                        ],
+
+                        matricula = [
+                                req.body.imovel.matricula.numero, 
+                                req.body.imovel.matricula.data
+                        ],
+
+                        requerimento = [
+                                req.body.imovel.requerimento.dataTermo, 
+                                req.body.imovel.requerimento.numeroAverbacao, 
+                                req.body.imovel.requerimento.dataAverbacao
+                        ],
+                ],
+                averbacao = [
+                        req.body.averbacao.protocolo, 
+                        req.body.averbacao.favorecido, 
+                        req.body.averbacao.matricula, 
+                        req.body.averbacao.endereco, 
+                        req.body.averbacao.subOficial, 
+                        req.body.averbacao.comarca, 
+                        req.body.averbacao.estado, 
+                        req.body.averbacao.numero_daje, 
+                        req.body.averbacao.data, 
+                        req.body.averbacao.responsavel
+                ]                
+        );
+        console.log(req.body)
 
         console.log('Transaction has been submitted');
         res.send('Transaction has been submitted CAR ADDED');
@@ -184,7 +250,7 @@ const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizatio
 // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
         // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('changeCarOwner', req.params.car_index, req.body.registroFicha);
+        await contract.submitTransaction('changeCarOwner', req.params.car_index, req.body.Ficha);
         console.log('Transaction has been submitted');
         res.send('Transaction has been submitted');
 // Disconnect from the gateway.

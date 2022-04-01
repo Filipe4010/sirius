@@ -12,74 +12,83 @@ class FabCar extends Contract {
 
     async initLedger(ctx) {
         console.info('============= START : Initialize Ledger ===========');
-        const cars = [
-            {
-                color: 'blue',
-                make: 'Toyota',
-                model: 'Prius',
-                owner: 'Tomoko',
-            },
-            {
-                color: 'red',
-                make: 'Ford',
-                model: 'Mustang',
-                owner: 'Brad',
-            },
-            {
-                color: 'green',
-                make: 'Hyundai',
-                model: 'Tucson',
-                owner: 'Jin Soo',
-            },
-            {
-                color: 'yellow',
-                make: 'Volkswagen',
-                model: 'Passat',
-                owner: 'Max',
-            },
-            {
-                color: 'black',
-                make: 'Tesla',
-                model: 'S',
-                owner: 'Adriana',
-            },
-            {
-                color: 'purple',
-                make: 'Peugeot',
-                model: '205',
-                owner: 'Michel',
-            },
-            {
-                color: 'white',
-                make: 'Chery',
-                model: 'S22L',
-                owner: 'Aarav',
-            },
-            {
-                color: 'violet',
-                make: 'Fiat',
-                model: 'Punto',
-                owner: 'Pari',
-            },
-            {
-                color: 'indigo',
-                make: 'Tata',
-                model: 'Nano',
-                owner: 'Valeria',
-            },
-            {
-                color: 'brown',
-                make: 'Holden',
-                model: 'Barina',
-                owner: 'Shotaro',
-            },
+        var registro;
+        var imovel;
+        var coordenadas;
+        var proprietario;
+        var escritura;
+        var matricula;
+        var requerimento;
+        var averbacao;
+
+        const escrituras = [
+            registro= [
+                'ano',
+                'oficialTitular',
+                'numeroMatricula',
+                'ficha',
+                'data'
+            ],
+            imovel= [
+                'descricao', 
+                'numero', 
+                'inscricao', 
+                'tipo', 
+                'endereco', 
+                'composicao',
+                coordenadas= [
+                    'marco', 
+                    'norte', 
+                    'leste', 
+                    'plana', 
+                    'azimutePlano'  
+                ],
+                proprietario= [
+                    'nome', 
+                    'sede', 
+                    'cnpjMf'
+                ],	
+                escritura= [
+                    'data', 
+                    'livro'
+                ],	
+                registro= [
+                    'numero', 
+                    'data', 
+                    'matriculaRg'
+                ],	
+                matricula= [
+                    'numero', 
+                    'data'
+                ],	
+                requerimento= [
+                    'dataTermo', 
+                    'numeroAverbacao', 
+                    'dataAverbacao'
+                ],	
+            ],
+            averbacao= [
+                'protocolo', 
+                'favorecido', 
+                'matricula', 
+                'endereco', 
+                'subOficial', 
+                'comarca', 
+                'estado', 
+                'numero_daje', 
+                'data', 
+                'responsavel'			   
+            ],	            
         ];
 
-        for (let i = 0; i < cars.length; i++) {
-            cars[i].docType = 'car';
-            await ctx.stub.putState('CAR' + i, Buffer.from(JSON.stringify(cars[i])));
-            console.info('Added <--> ', cars[i]);
-        }
+        // for (let i = 0; i < escrituras.length; i++) {
+        //     escrituras[i].docType = 'car';
+        //     await ctx.stub.putState('CAR' + i, Buffer.from(JSON.stringify(escrituras[i])));
+        //     console.info('Added <--> ', escrituras[i]);
+        // }
+
+        await ctx.stub.putState('CAMPO-UNICO-1', Buffer.from(JSON.stringify(escrituras)));
+        console.info('Added <--> ', escrituras);
         console.info('============= END : Initialize Ledger ===========');
     }
 
@@ -92,52 +101,20 @@ class FabCar extends Contract {
         return carAsBytes.toString();
     }
 
-    async createCar(ctx, CampoUnicoIdentificacao,registroAno, registroOficialTitular, registroNumeroMatricula, registroFicha, registroData, descricaoImovel, numeroImovel, inscricaoImovel, tipoImovel, enderecoImovel, composicaoImovel, marcoCoordenadas, norteCoordenadas, lesteCoordenadas, planaCoordenadas, azimutePlanoCoordenadas, nomeProprietario, sedeProprietario, cnpjMfProprietario, dataEscrituraPublica, livroEscrituraPublica, numeroRegistro, dataRegistro, matriculaRgRegistro, numeroMatricula, dataMatricula, dataTermoRequerimento, numeroAverbacaoRequerimento, dataAverbacaoRequerimento, protocoloAv1, favorecidoAv1, matriculaAv1, enderecoAv1, protocoloAv2, subOficialAv2, comarcaAv2, estadoAv2, numeroDajeAv2, dataAv2, responsavelAv2) {
+    async createCar(
+        ctx, 
+        CampoUnicoIdentificacao,
+        registro,
+        imovel, 
+        averbacao
+        ) {
+            
         console.info('============= START : Create Escritura ===========');
 
         const escritura = {
-            registroAno, 
-            registroOficialTitular, 
-            registroNumeroMatricula, 
-            registroFicha, 
-            registroData, 
-            descricaoImovel, 
-            numeroImovel, 
-            inscricaoImovel, 
-            tipoImovel, 
-            enderecoImovel, 
-            composicaoImovel, 
-            marcoCoordenadas, 
-            norteCoordenadas, 
-            lesteCoordenadas, 
-            planaCoordenadas, 
-            azimutePlanoCoordenadas, 
-            nomeProprietario, 
-            sedeProprietario, 
-            cnpjMfProprietario, 
-            dataEscrituraPublica, 
-            livroEscrituraPublica, 
-            numeroRegistro, 
-            dataRegistro, 
-            matriculaRgRegistro, 
-            numeroMatricula, 
-            dataMatricula, 
-            dataTermoRequerimento, 
-            numeroAverbacaoRequerimento, 
-            dataAverbacaoRequerimento, 
-            protocoloAv1, 
-            favorecidoAv1, 
-            matriculaAv1, 
-            enderecoAv1, 
-            protocoloAv2, 
-            subOficialAv2, 
-            comarcaAv2, 
-            estadoAv2, 
-            numeroDajeAv2, 
-            dataAv2, 
-            responsavelAv2
-        };
-
+            registro,imovel,averbacao
+        }
+      
         await ctx.stub.putState(CampoUnicoIdentificacao, Buffer.from(JSON.stringify(escritura)));
         console.info('============= END : Create Escritura ===========');
     }
